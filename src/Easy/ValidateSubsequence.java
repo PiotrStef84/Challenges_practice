@@ -15,7 +15,12 @@ public class ValidateSubsequence {
 
         boolean result = isValidSubsequence(array, sequence);
 
+        // second way using a for loop
+        boolean result2 = isValidSubsequence2(array, sequence);
+
         System.out.println(result);
+
+        System.out.println(result2);
 
     }
 
@@ -41,5 +46,27 @@ public class ValidateSubsequence {
         }
 
         return false;
+    }
+
+    public static boolean isValidSubsequence2(List<Integer> array, List<Integer> sequence) {
+
+        //pointer for currently checked element of the sequence
+        int seqIdx = 0;
+
+        for(int i =0; i<array.size(); i++){
+
+            // condition to prevent going out of bounds
+            if(seqIdx == sequence.size()){
+                return true;
+            }
+            // if the element is found move the pointer to another location
+            if(sequence.get(seqIdx) == array.get(i)){
+                System.out.println("Found " + sequence.get(seqIdx) + " at index " + i);
+                seqIdx++;
+            }
+        }
+
+        // check if condition is true -> after leaving a loop is the pointer at the last spot
+        return seqIdx == sequence.size();
     }
 }
