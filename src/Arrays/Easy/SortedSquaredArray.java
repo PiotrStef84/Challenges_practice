@@ -1,8 +1,6 @@
-package Easy;
+package Arrays.Easy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class SortedSquaredArray {
     public static void main(String[] args) {
