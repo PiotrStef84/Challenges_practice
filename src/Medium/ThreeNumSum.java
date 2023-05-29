@@ -23,7 +23,7 @@ public class ThreeNumSum {
         }
     }
     // Time O(n^2) -> one for loop iteration, but pointers need to iterate for every number
-    // Space 0(n) -> we are storing triplets of numbers, but its possible to be storing every number in array
+    // Space 0(n) -> we are storing triplets of numbers, but it's possible to be storing every number in array
     private static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
 
         Arrays.sort(array);
