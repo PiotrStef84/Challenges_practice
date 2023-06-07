@@ -29,9 +29,25 @@ public class MoveElementToEnd {
 
         System.out.println(result);
     }
-
+    // O(n) time -> as indexes are visited only once
+    // O(1) space -> we are not using any auxiliary data structure, everything is done "in house"
     private static List<Integer> MoveElement(List<Integer> array, int toMove) {
+        int left = 0;
+        int right = array.toArray().length - 1;
 
-        return new ArrayList<Integer>();
+        while(left<right){
+            if(array.get(right) == toMove){
+                right--;
+            } else if (array.get(right) != toMove) {
+                if(array.get(left) == toMove){
+                    array.set(left, array.get(right));
+                    array.set(right, toMove);
+                } else {
+                    left++;
+                }
+            }
+        }
+            return array;
+        //return new ArrayList<Integer>();
     }
 }
