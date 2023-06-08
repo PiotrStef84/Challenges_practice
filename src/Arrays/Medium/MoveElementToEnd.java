@@ -28,6 +28,7 @@ public class MoveElementToEnd {
         List<Integer> result = MoveElement(array, toMove);
 
         System.out.println(result);
+
     }
     // O(n) time -> as indexes are visited only once
     // O(1) space -> we are not using any auxiliary data structure, everything is done "in house"
