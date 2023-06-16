@@ -20,7 +20,7 @@ public class MonotonicArray {
         System.out.println(result);
 
     }
-
+    // O(n) time | O(1) space - where n is the length of the array
     private static boolean isMonotonic(int[] array) {
 
         boolean isMono = true;
