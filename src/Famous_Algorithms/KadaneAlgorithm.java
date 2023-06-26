@@ -22,7 +22,14 @@ public class KadaneAlgorithm {
     }
 
     private static int kadanesAlgorithm(int[] array) {
+        int maxSoFar = Integer.MIN_VALUE;
+        int indexSum = 0;
 
-        return -1;
+        for(int number : array){
+            maxSoFar = Math.max(maxSoFar, indexSum + number);
+            indexSum = Math.max(0, indexSum + number);
+        }
+
+        return maxSoFar;
     }
 }
