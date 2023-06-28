@@ -21,13 +21,14 @@ public class KadaneAlgorithm {
         System.out.println(result);
     }
 
+    // O(n) time | O(1) space - when n is the length of the input array
     private static int kadanesAlgorithm(int[] array) {
-        int maxSoFar = Integer.MIN_VALUE;
-        int indexSum = 0;
+        int maxEndingHere = Integer.MIN_VALUE;
+        int maxSoFar = 0;
 
         for(int number : array){
-            maxSoFar = Math.max(maxSoFar, indexSum + number);
-            indexSum = Math.max(0, indexSum + number);
+            maxEndingHere = Math.max(number, maxEndingHere + number);
+            maxSoFar = Math.max(maxSoFar, maxEndingHere);
         }
 
         return maxSoFar;
