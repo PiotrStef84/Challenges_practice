@@ -23,14 +23,26 @@ public class KadaneAlgorithm {
 
     // O(n) time | O(1) space - when n is the length of the input array
     private static int kadanesAlgorithm(int[] array) {
-        int maxEndingHere = Integer.MIN_VALUE;
-        int maxSoFar = 0;
+        int maxEndingHere = array[0];
+        int maxSoFar = array[0];
 
         for(int number : array){
             maxEndingHere = Math.max(number, maxEndingHere + number);
             maxSoFar = Math.max(maxSoFar, maxEndingHere);
         }
 
+        return maxSoFar;
+    }
+
+    // Second solution using for each loop
+    private static int kadanesAlgorithm2(int[] array) {
+        int maxSoFar = Integer.MIN_VALUE;
+        int maxSum = 0;
+
+        for(int number : array){
+            maxSoFar = Math.max(maxSoFar, maxSum + number);
+            maxSum = Math.max(0, maxSum + number);
+        }
         return maxSoFar;
     }
 }
