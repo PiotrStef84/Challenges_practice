@@ -23,7 +23,12 @@ public class LongestPeak {
 
     }
 
-    private static int longestPeak(int[] input) {
+    private static int longestPeak(int[] array) {
+        int longestPeakLength = 0;
+        int i = 1;
+        while(i < array.length - 1){
+            boolean isPeak = array[i-1] < array[i] && array[i] > array[i +1];
+        }
         return -1;
     }
 }
