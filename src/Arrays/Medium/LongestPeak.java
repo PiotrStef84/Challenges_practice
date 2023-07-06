@@ -31,4 +31,19 @@ public class LongestPeak {
         }
         return -1;
     }
+
+    private static int longestPeak2(int[] array) {
+        int count = 0;
+        int maxPeak = 0;
+        boolean peak = false;
+
+        for(int i = 1; i<array.length; i++){
+            if(array[i-1] < array[i] && !peak){
+                count = (count == 0) ? 2 : count + 1;
+            }
+        }
+
+
+        return -1;
+    }
 }
