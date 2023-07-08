@@ -33,14 +33,25 @@ public class LongestPeak {
                 continue;
             }
 
-            int leftIdx = i -2;
+            int leftIdx = i - 2;
             while(leftIdx >= 0 && array[leftIdx] < array[leftIdx + 1]){
                 leftIdx -= 1;
             }
 
+            int rightIdx = i + 2;
+            while(rightIdx >= 0 && array[rightIdx] < array[rightIdx + 1]){
+                rightIdx += 1;
+            }
+
+            int currentPeakLength = rightIdx - leftIdx -1;
+            if(currentPeakLength > longestPeakLength){
+                longestPeakLength = currentPeakLength;
+            }
+            i = rightIdx;
+
 
         }
-        return -1;
+        return longestPeakLength;
     }
 
     private static int longestPeak2(int[] array) {
