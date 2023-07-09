@@ -62,6 +62,10 @@ public class LongestPeak {
         for(int i = 1; i<array.length; i++){
             if(array[i-1] < array[i] && !peak){
                 count = (count == 0) ? 2 : count + 1;
+            } else if (count > 0 && array[i - 1] > array[i]) {
+                count = (count == 0) ? 2 : count + 1;
+                maxPeak = Math.max(maxPeak, count);
+                peak = true;
             }
         }
 
