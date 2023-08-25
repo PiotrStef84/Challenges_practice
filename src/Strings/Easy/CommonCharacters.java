@@ -5,7 +5,7 @@ import java.util.*;
 public class CommonCharacters {
     public static void main(String[] args) {
 
-        /* Write a function that takes in a non-empty list of non-empty strings and returns a list of characters that are
+     /* Write a function that takes in a non-empty list of non-empty strings and returns a list of characters that are
      * common to all strings in the list, ignoring multiplicity.
      *
      * Note that the strings are not guaranteed to only contain alphanumeric characters. The list you return
